@@ -53,8 +53,9 @@ class OrderService implements OrderServiceInterface
                     break;
                 }
             }
-            $this->setTotalAmount(round($this->subTotal + $this->shippingAmount + $this->vatAmount - $orderItem->discountAmount - $this->shippingAmountDiscount, 4));
         }
+        $this->setTotalAmount();
+
     }
 
     private function createOrderItem(Product $product): OrderItem
@@ -145,7 +146,7 @@ class OrderService implements OrderServiceInterface
      */
     public function getSubTotal()
     {
-        return $this->subTotal;
+        return round($this->subTotal, 4);
     }
 
     /**
@@ -193,14 +194,13 @@ class OrderService implements OrderServiceInterface
      */
     public function getTotalAmount()
     {
-        return round($this->totalAmount - $this->discountsAmount, 4);
+        return round($this->totalAmount, 4);
     }
 
     /**
-     * @param mixed $totalAmount
      */
-    public function setTotalAmount($totalAmount)
+    public function setTotalAmount()
     {
-        $this->totalAmount = $totalAmount;
+        $this->totalAmount = round(($this->subTotal + $this->shippingAmount + $this->vatAmount) - ($this->discountsAmount + $this->shippingAmountDiscount), 4);
     }
 }

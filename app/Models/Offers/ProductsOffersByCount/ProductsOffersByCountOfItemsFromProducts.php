@@ -33,7 +33,7 @@ class ProductsOffersByCountOfItemsFromProducts extends Model implements OfferPro
     {
         $productsOfSelected = [];
         foreach($this->fromProducts as $offer){
-            $productsOfferIds[] = $offer->product_id;
+            $productsOfSelected[] = $offer->product_id;
         }
         $productsOfferIds = [];
         foreach($this->offerProducts as $offer){
