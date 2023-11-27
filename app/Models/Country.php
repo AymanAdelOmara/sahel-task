@@ -9,11 +9,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property string name
  * @property string slug
  * @property float shipping_rate
+ * @property integer id
  */
 class Country extends Model
 {
-    use HasFactory;
     protected $table = 'countries';
+    use HasFactory;
 
     protected $fillable = [
         'name',
