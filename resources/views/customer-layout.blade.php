@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAHEL</title>
     <meta name="csrf-token" content="{{csrf_token()}}">
     <link rel="preconnect" href="https://fonts.gstatic.com"/>
     <link rel="stylesheet" href="{{asset('web/css/bootstrap-en.css') }}"/>

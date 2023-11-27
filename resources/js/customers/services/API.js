@@ -7,12 +7,13 @@ class API {
     }
 
     async getProducts(page) {
-        return await this.http.get(this.http.baseUrl + '/api/v1/products?page=' + page);
+        return await this.http.get(this.http.baseUrl + '/api/v1/customer/products?page=' + page);
     }
 
     async orderCheckout(productsIds) {
-        return await this.http.post(this.http.baseUrl + '/api/v1/order-checkout', {products: productsIds});
+        return await this.http.post(this.http.baseUrl + '/api/v1/customer/order-checkout', {products: productsIds});
     }
+
 
 }
 
