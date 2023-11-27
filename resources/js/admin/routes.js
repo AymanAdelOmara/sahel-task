@@ -11,7 +11,7 @@ export default {
             beforeEnter: (to, from, next) => {
                 let isAuthenticated = false;
                 const accessToken = localStorage.getItem("accessTokenAdmin");
-                if (accessToken != null)
+                // if (accessToken != null)
                     isAuthenticated = true;
                 if (!isAuthenticated) {
                     next({name: 'AuthLogin'})
@@ -26,6 +26,26 @@ export default {
                     component: () => import(/* webpackChunkName: "dashboard" */'./components/index'),
                     name: 'dashboard'
                 },
+                {
+                    path: 'countries',
+                    component: () => import(/* webpackChunkName: "products_companies" */'./components/countries'),
+                    name: 'countries-list'
+                },
+                {
+                    path: 'products',
+                    component: () => import(/* webpackChunkName: "products" */'./components/products'),
+                    name: 'products-list'
+                },
+                {
+                    path: 'products/:id',
+                    component: () => import(/* webpackChunkName: "products-details" */'./components/products/edit'),
+                    name: 'products-edit'
+                },
+                {
+                    path: 'offers',
+                    component: () => import(/* webpackChunkName: "products-details" */'./components/offers'),
+                    name: 'offers-list'
+                }
             ],
         },
         {

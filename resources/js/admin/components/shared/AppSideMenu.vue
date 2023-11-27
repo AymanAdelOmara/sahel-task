@@ -13,6 +13,21 @@
                         <i class="fe fe-airplay"></i><span class="sidemenu-label">الرئيسية</span>
                     </router-link>
                 </li>
+                <li class="nav-item" v-can="'productsCategories-list'">
+                    <router-link class="nav-link" active-class="activeRouter" to="/admin/countries">
+                        <i class="fe fe-grid"></i><span class="sidemenu-label">الدول</span>
+                    </router-link>
+                </li>
+                <li class="nav-item" v-can="'products-list'">
+                    <router-link class="nav-link" active-class="activeRouter" to="/admin/products">
+                        <i class="fe fe-image"></i><span class="sidemenu-label">المنتجات</span>
+                    </router-link>
+                </li>
+                <li class="nav-item" v-can="'products-list'">
+                    <router-link class="nav-link" active-class="activeRouter" to="/admin/offers">
+                        <i class="fe fe-package"></i><span class="sidemenu-label">العروض</span>
+                    </router-link>
+                </li>
             </ul>
         </div>
     </div>

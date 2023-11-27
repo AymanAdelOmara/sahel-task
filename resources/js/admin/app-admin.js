@@ -103,29 +103,12 @@ Vue.filter('truncate', function (text, stop, clamp) {
 
 Vue.directive('can', function (el, binding, node) {
     const Permissions = JSON.parse(localStorage.getItem('adminPermissions'));
-    const permissionExist = Permissions.find(o => o.name === binding.value);
+    const permissionExist = Permissions?.find(o => o.name === binding.value);
     if (permissionExist !== undefined){
             return node.elm.hidden = false;
     }
-    // return node.elm.hidden = true;
 });
-Vue.use(VueQuillEditor, {
-    modules: {
-        toolbar: [
-            ["bold", "italic", "underline"],
-            // [{header: 1}, {header: 2}],
-            [{list: "ordered"}, {list: "bullet"}],
-            [/*{script: "sub"},{script: "super"}*/],
-            /*[{indent: "-1"}, {indent: "+1"}],*/
-            [{direction: "rtl"}],
-            [{size: ["small", !1, "large", "huge"]}],
-            [{header: [1, 2, 3, 4, 5, 6, !1]}],
-            [{color: []}, {/*background: []*/}],
-            /*[{font: []}],*/ [{align: []}],
-            ["clean"], ["link"/*, "image", "video"*/]
-        ]
-    },
-});
+
 new Vue({
     el: '#admin-app',
     router: router,
